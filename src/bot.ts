@@ -17,7 +17,6 @@ const client = new Client({
 client.once('ready', async () => {
   console.log(`Logged in as ${client.user?.tag}!`);
   init(client);
-  // sendDailyMessageToEveryone(client);
 
   // Cron to send the message to every server it's on
   schedule.scheduleJob('0 9 * * *', async () => sendDailyMessageToEveryone(client));
